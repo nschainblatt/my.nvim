@@ -187,7 +187,13 @@ require('lazy').setup({
         direction = 'float',
       }
     end,
-  }, -- TODO: LEARN
+  },
+  {
+    'tpope/vim-fugitive',
+    config = function()
+      vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+    end,
+  },
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
