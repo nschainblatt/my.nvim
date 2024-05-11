@@ -231,6 +231,12 @@ require('lazy').setup({
   -- *** Custom ***
 
   'ThePrimeagen/vim-be-good',
+  {
+    'mbbill/undotree',
+    config = function()
+      vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+    end,
+  },
 
   -- **************
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
