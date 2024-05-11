@@ -178,6 +178,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
     end,
   },
+  { 'akinsho/toggleterm.nvim', version = '*', config = true }, -- TODO: LEARN
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
