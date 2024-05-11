@@ -178,7 +178,15 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
     end,
   },
-  { 'akinsho/toggleterm.nvim', version = '*', config = true }, -- TODO: LEARN
+  {
+    'akinsho/toggleterm.nvim', -- TODO: LEARN
+    version = '*',
+    config = function()
+      require('toggleterm').setup {
+        open_mapping = [[<c-\>]],
+      }
+    end,
+  }, -- TODO: LEARN
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
@@ -214,6 +222,9 @@ require('lazy').setup({
   },
 
   -- **************
+  -- Other installations:
+  -- lazygit (not nvim, external)
+  -- Other mason packages not listed in the lsp server list (like php-debug-adapter, java-debug-adapter, etc...)
 
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
