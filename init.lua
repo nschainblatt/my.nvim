@@ -626,6 +626,8 @@ require('lazy').setup({
         -- *** BACKEND ***
         --
         intelephense = {},
+        jdtls = {},
+
         --
         -- ****************
         --
