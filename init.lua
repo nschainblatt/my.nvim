@@ -184,6 +184,7 @@ require('lazy').setup({
     config = function()
       require('toggleterm').setup {
         open_mapping = [[<c-\>]],
+        direction = 'float',
       }
     end,
   }, -- TODO: LEARN
