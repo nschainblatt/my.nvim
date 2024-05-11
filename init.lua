@@ -583,7 +583,12 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
+        eslint = {},
+        tailwindcss = {},
+        stylelint_lsp = {}, -- scss and and css in js
+        cssls = {}, -- css and css in js
+
         --
 
         lua_ls = {
