@@ -573,6 +573,16 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+        -- *** FRONTEND ***
+
+        tsserver = {},
+        eslint = {},
+        tailwindcss = {},
+        stylelint_lsp = {}, -- scss and and css in js
+        cssls = {}, -- css and css in js
+
+        -- ****************
+        --
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -583,14 +593,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
-        eslint = {},
-        tailwindcss = {},
-        stylelint_lsp = {}, -- scss and and css in js
-        cssls = {}, -- css and css in js
-
         --
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
