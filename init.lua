@@ -107,6 +107,9 @@ vim.opt.relativenumber = true
 -- Set absolute and relative line numbers in netrw
 vim.cmd [[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']]
 
+-- Open netrw to current directory
+vim.keymap.set('n', '<leader>sv', vim.cmd.Ex)
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
