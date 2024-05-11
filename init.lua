@@ -623,6 +623,12 @@ require('lazy').setup({
 
         -- ****************
         --
+        -- *** BACKEND ***
+        --
+        intelephense = {},
+        --
+        -- ****************
+        --
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
