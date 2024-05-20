@@ -173,6 +173,17 @@ require('lazy').setup({
 
   'ThePrimeagen/vim-be-good',
   {
+    'sindrets/diffview.nvim',
+    depencencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('diffview').setup {
+        enhanced_diff_hl = true,
+        vim.api.nvim_set_keymap('n', '<leader>gh', ':DiffviewFileHistory %<CR>', { noremap = true, silent = true }),
+        vim.api.nvim_set_keymap('n', '<leader>gc', ':DiffviewOpen<CR>', { noremap = true, silent = true })
+      }
+    end
+  },
+  {
     'mbbill/undotree',
     config = function()
       vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
