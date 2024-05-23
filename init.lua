@@ -25,6 +25,8 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.opt.guicursor = 'n-v-c-sm:block,i-ci-ve:block-Cursor,r-cr-o:hor20'
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -179,9 +181,9 @@ require('lazy').setup({
       require('diffview').setup {
         enhanced_diff_hl = true,
         vim.api.nvim_set_keymap('n', '<leader>gh', ':DiffviewFileHistory %<CR>', { noremap = true, silent = true }),
-        vim.api.nvim_set_keymap('n', '<leader>gc', ':DiffviewOpen<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', '<leader>gc', ':DiffviewOpen<CR>', { noremap = true, silent = true }),
       }
-    end
+    end,
   },
   {
     'mbbill/undotree',
@@ -675,16 +677,16 @@ require('lazy').setup({
     },
     opts = {
       notify_on_error = false,
-      format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
-        return {
-          timeout_ms = 500,
-          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-        }
-      end,
+      -- format_on_save = function(bufnr)
+      --   -- Disable "format_on_save lsp_fallback" for languages that don't
+      --   -- have a well standardized coding style. You can add additional
+      --   -- languages here or re-enable it for the disabled ones.
+      --   local disable_filetypes = { c = true, cpp = true }
+      --   return {
+      --     timeout_ms = 500,
+      --     lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+      --   }
+      -- end,
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
@@ -909,9 +911,9 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
@@ -942,6 +944,11 @@ require('lazy').setup({
     },
   },
 })
+
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.softtabstop = 2
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
