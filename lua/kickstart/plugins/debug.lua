@@ -21,10 +21,10 @@ return {
     }
 
     -- Basic debugging keymaps
-    vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
-    vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
-    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
-    vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
+    vim.keymap.set('n', '<F9>', dap.continue, { desc = 'Debug: Start/Continue' })
+    vim.keymap.set('n', '<F7>', dap.step_into, { desc = 'Debug: Step Into' })
+    vim.keymap.set('n', '<F8>', dap.step_over, { desc = 'Debug: Step Over' })
+    vim.keymap.set('n', '<F6>', dap.step_out, { desc = 'Debug: Step Out' })
     vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
     vim.keymap.set('n', '<leader>B', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
@@ -54,7 +54,7 @@ return {
             { id = 'stacks', size = 0.1 },
             { id = 'watches', size = 0.1 },
           },
-          size = 60, -- Width of the left layout
+          size = 30, -- Width of the left layout
           position = 'left',
         },
         {
@@ -62,7 +62,7 @@ return {
             'repl',
             'console',
           },
-          size = 15, -- Height of the bottom layout
+          size = 5, -- Height of the bottom layout
           position = 'bottom',
         },
       },
@@ -93,7 +93,7 @@ return {
     dap.adapters.php = {
       type = 'executable',
       command = 'node',
-      args = { '/home/west/Downloads/vscode-php-debug/out/phpDebug.js' },
+      args = { '/home/mrplayingame/debug/vscode-php-debug/out/phpDebug.js' },
     }
 
     dap.configurations.php = {
@@ -103,17 +103,17 @@ return {
         name = 'Listen for Xdebug',
         port = 9003,
         pathMappings = {
-          ['/var/www/app'] = '/home/west/bluearrow/base-project/app',
-          ['/var/www/config'] = '/home/west/bluearrow/base-project/config',
-          ['/var/www/database'] = '/home/west/bluearrow/base-project/database',
-          ['/var/www/public'] = '/home/west/bluearrow/base-project/public',
-          ['/var/www/resources'] = '/home/west/bluearrow/base-project/resources',
-          ['/var/www/routes'] = '/home/west/bluearrow/base-project/routes',
-          ['/var/www/storage'] = '/home/west/bluearrow/base-project/storage',
-          ['/var/www/tests'] = '/home/west/bluearrow/base-project/tests',
-          ['/var/www/scripts'] = '/home/west/bluearrow/base-project/scripts',
-          ['/var/www/vendor'] = '/home/west/bluearrow/base-project/vendor',
-          ['/var/www/artisan'] = '/home/west/bluearrow/base-project/artisan',
+          ['/var/www/app'] = '/home/mrplayingame/bluearrow/base-project/app',
+          ['/var/www/config'] = '/home/mrplayingame/bluearrow/base-project/config',
+          ['/var/www/database'] = '/home/mrplayingame/bluearrow/base-project/database',
+          ['/var/www/public'] = '/home/mrplayingame/bluearrow/base-project/public',
+          ['/var/www/resources'] = '/home/mrplayingame/bluearrow/base-project/resources',
+          ['/var/www/routes'] = '/home/mrplayingame/bluearrow/base-project/routes',
+          ['/var/www/storage'] = '/home/mrplayingame/bluearrow/base-project/storage',
+          ['/var/www/tests'] = '/home/mrplayingame/bluearrow/base-project/tests',
+          ['/var/www/scripts'] = '/home/mrplayingame/bluearrow/base-project/scripts',
+          ['/var/www/vendor'] = '/home/mrplayingame/bluearrow/base-project/vendor',
+          ['/var/www/artisan'] = '/home/mrplayingame/bluearrow/base-project/artisan',
         },
       },
     }
